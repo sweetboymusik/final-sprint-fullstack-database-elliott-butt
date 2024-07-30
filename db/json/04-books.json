@@ -1,0 +1,1371 @@
+[
+  {
+    "id": 1,
+    "title": "Galactic Odyssey",
+    "author_id": 11,
+    "genre_id": 1,
+    "publisher_id": 13,
+    "publication_date": "1946-02-01",
+    "word_count": 85350
+  },
+  {
+    "id": 2,
+    "title": "Quantum Leap",
+    "author_id": 12,
+    "genre_id": 1,
+    "publisher_id": 14,
+    "publication_date": "1955-03-15",
+    "word_count": 112350
+  },
+  {
+    "id": 3,
+    "title": "The Time Traveler",
+    "author_id": 30,
+    "genre_id": 1,
+    "publisher_id": 1,
+    "publication_date": "1967-09-06",
+    "word_count": 195109
+  },
+  {
+    "id": 4,
+    "title": "Spacebound",
+    "author_id": 21,
+    "genre_id": 1,
+    "publisher_id": 3,
+    "publication_date": "1973-05-11",
+    "word_count": 134259
+  },
+  {
+    "id": 5,
+    "title": "Alien Invasion",
+    "author_id": 15,
+    "genre_id": 1,
+    "publisher_id": 2,
+    "publication_date": "1980-07-22",
+    "word_count": 156497
+  },
+  {
+    "id": 6,
+    "title": "Cybernetic Dreams",
+    "author_id": 28,
+    "genre_id": 1,
+    "publisher_id": 8,
+    "publication_date": "1984-08-30",
+    "word_count": 145832
+  },
+  {
+    "id": 7,
+    "title": "The Last Colony",
+    "author_id": 22,
+    "genre_id": 1,
+    "publisher_id": 10,
+    "publication_date": "1991-11-14",
+    "word_count": 170291
+  },
+  {
+    "id": 8,
+    "title": "Galactic Odyssey II",
+    "author_id": 11,
+    "genre_id": 1,
+    "publisher_id": 13,
+    "publication_date": "1997-02-09",
+    "word_count": 153239
+  },
+  {
+    "id": 9,
+    "title": "Starship Troopers",
+    "author_id": 35,
+    "genre_id": 1,
+    "publisher_id": 5,
+    "publication_date": "2002-12-17",
+    "word_count": 183984
+  },
+  {
+    "id": 10,
+    "title": "Warp Speed",
+    "author_id": 17,
+    "genre_id": 1,
+    "publisher_id": 6,
+    "publication_date": "2010-03-19",
+    "word_count": 165427
+  },
+
+  {
+    "id": 11,
+    "title": "Enchanted Forest",
+    "author_id": 34,
+    "genre_id": 2,
+    "publisher_id": 3,
+    "publication_date": "1948-12-05",
+    "word_count": 181363
+  },
+  {
+    "id": 12,
+    "title": "The Dragon's Quest",
+    "author_id": 41,
+    "genre_id": 2,
+    "publisher_id": 9,
+    "publication_date": "1956-05-29",
+    "word_count": 84014
+  },
+  {
+    "id": 13,
+    "title": "Wizards' Realm",
+    "author_id": 50,
+    "genre_id": 2,
+    "publisher_id": 12,
+    "publication_date": "1962-10-12",
+    "word_count": 122583
+  },
+  {
+    "id": 14,
+    "title": "Magic Kingdom",
+    "author_id": 44,
+    "genre_id": 2,
+    "publisher_id": 8,
+    "publication_date": "1970-01-21",
+    "word_count": 145939
+  },
+  {
+    "id": 15,
+    "title": "Elven Magic",
+    "author_id": 29,
+    "genre_id": 2,
+    "publisher_id": 13,
+    "publication_date": "1981-07-16",
+    "word_count": 171274
+  },
+  {
+    "id": 16,
+    "title": "The Sorcerer's Apprentice",
+    "author_id": 47,
+    "genre_id": 2,
+    "publisher_id": 15,
+    "publication_date": "1985-06-09",
+    "word_count": 159764
+  },
+  {
+    "id": 17,
+    "title": "Fairy Tales Reimagined",
+    "author_id": 36,
+    "genre_id": 2,
+    "publisher_id": 7,
+    "publication_date": "1990-12-11",
+    "word_count": 133741
+  },
+  {
+    "id": 18,
+    "title": "The Quest for the Crown",
+    "author_id": 39,
+    "genre_id": 2,
+    "publisher_id": 11,
+    "publication_date": "1995-09-02",
+    "word_count": 190516
+  },
+  {
+    "id": 19,
+    "title": "Legend of the Lost City",
+    "author_id": 50,
+    "genre_id": 2,
+    "publisher_id": 14,
+    "publication_date": "2001-05-25",
+    "word_count": 174869
+  },
+  {
+    "id": 20,
+    "title": "Dragons' Legacy",
+    "author_id": 23,
+    "genre_id": 2,
+    "publisher_id": 4,
+    "publication_date": "2007-04-13",
+    "word_count": 160290
+  },
+
+  {
+    "id": 21,
+    "title": "Mystery at the Manor",
+    "author_id": 37,
+    "genre_id": 3,
+    "publisher_id": 3,
+    "publication_date": "1988-12-18",
+    "word_count": 54969
+  },
+  {
+    "id": 22,
+    "title": "The Secret Chamber",
+    "author_id": 33,
+    "genre_id": 3,
+    "publisher_id": 11,
+    "publication_date": "1989-02-03",
+    "word_count": 120417
+  },
+  {
+    "id": 23,
+    "title": "Deadly Whispers",
+    "author_id": 31,
+    "genre_id": 3,
+    "publisher_id": 12,
+    "publication_date": "1992-06-22",
+    "word_count": 139748
+  },
+  {
+    "id": 24,
+    "title": "The Case of the Missing Gem",
+    "author_id": 45,
+    "genre_id": 3,
+    "publisher_id": 5,
+    "publication_date": "1997-08-15",
+    "word_count": 102382
+  },
+  {
+    "id": 25,
+    "title": "Murder in the Alley",
+    "author_id": 29,
+    "genre_id": 3,
+    "publisher_id": 13,
+    "publication_date": "2000-12-30",
+    "word_count": 119847
+  },
+  {
+    "id": 26,
+    "title": "The Vanishing Act",
+    "author_id": 40,
+    "genre_id": 3,
+    "publisher_id": 6,
+    "publication_date": "2004-07-10",
+    "word_count": 134298
+  },
+  {
+    "id": 27,
+    "title": "Suspicion in the Shadows",
+    "author_id": 42,
+    "genre_id": 3,
+    "publisher_id": 7,
+    "publication_date": "2009-03-20",
+    "word_count": 148329
+  },
+  {
+    "id": 28,
+    "title": "The Detective's Dilemma",
+    "author_id": 33,
+    "genre_id": 3,
+    "publisher_id": 8,
+    "publication_date": "2011-05-14",
+    "word_count": 156897
+  },
+  {
+    "id": 29,
+    "title": "The Final Clue",
+    "author_id": 25,
+    "genre_id": 3,
+    "publisher_id": 10,
+    "publication_date": "2015-11-29",
+    "word_count": 142576
+  },
+  {
+    "id": 30,
+    "title": "The Hidden Agenda",
+    "author_id": 39,
+    "genre_id": 3,
+    "publisher_id": 14,
+    "publication_date": "2019-02-10",
+    "word_count": 121485
+  },
+
+  {
+    "id": 31,
+    "title": "The Last Stand",
+    "author_id": 50,
+    "genre_id": 4,
+    "publisher_id": 5,
+    "publication_date": "1930-04-14",
+    "word_count": 158778
+  },
+  {
+    "id": 32,
+    "title": "Shadow of the Night",
+    "author_id": 49,
+    "genre_id": 4,
+    "publisher_id": 7,
+    "publication_date": "1942-05-14",
+    "word_count": 171013
+  },
+  {
+    "id": 33,
+    "title": "Deadly Intentions",
+    "author_id": 21,
+    "genre_id": 4,
+    "publisher_id": 9,
+    "publication_date": "1954-09-30",
+    "word_count": 145689
+  },
+  {
+    "id": 34,
+    "title": "Twisted Fate",
+    "author_id": 40,
+    "genre_id": 4,
+    "publisher_id": 8,
+    "publication_date": "1961-12-10",
+    "word_count": 123479
+  },
+  {
+    "id": 35,
+    "title": "The Perfect Crime",
+    "author_id": 31,
+    "genre_id": 4,
+    "publisher_id": 12,
+    "publication_date": "1976-07-27",
+    "word_count": 132094
+  },
+  {
+    "id": 36,
+    "title": "Killer's Game",
+    "author_id": 35,
+    "genre_id": 4,
+    "publisher_id": 11,
+    "publication_date": "1984-11-01",
+    "word_count": 137896
+  },
+  {
+    "id": 37,
+    "title": "The Silent Scream",
+    "author_id": 37,
+    "genre_id": 4,
+    "publisher_id": 13,
+    "publication_date": "1990-01-21",
+    "word_count": 118692
+  },
+  {
+    "id": 38,
+    "title": "The Edge of Darkness",
+    "author_id": 26,
+    "genre_id": 4,
+    "publisher_id": 10,
+    "publication_date": "1999-06-15",
+    "word_count": 156593
+  },
+  {
+    "id": 39,
+    "title": "In the Crosshairs",
+    "author_id": 42,
+    "genre_id": 4,
+    "publisher_id": 6,
+    "publication_date": "2007-02-23",
+    "word_count": 163970
+  },
+  {
+    "id": 40,
+    "title": "The Hidden Enemy",
+    "author_id": 22,
+    "genre_id": 4,
+    "publisher_id": 14,
+    "publication_date": "2014-10-30",
+    "word_count": 171322
+  },
+
+  {
+    "id": 41,
+    "title": "Love's Journey",
+    "author_id": 27,
+    "genre_id": 5,
+    "publisher_id": 15,
+    "publication_date": "1949-01-22",
+    "word_count": 88360
+  },
+  {
+    "id": 42,
+    "title": "Heart's Desire",
+    "author_id": 50,
+    "genre_id": 5,
+    "publisher_id": 8,
+    "publication_date": "1959-02-18",
+    "word_count": 121090
+  },
+  {
+    "id": 43,
+    "title": "The Lost Love",
+    "author_id": 39,
+    "genre_id": 5,
+    "publisher_id": 9,
+    "publication_date": "1963-06-11",
+    "word_count": 146893
+  },
+  {
+    "id": 44,
+    "title": "Romance in the Rain",
+    "author_id": 43,
+    "genre_id": 5,
+    "publisher_id": 12,
+    "publication_date": "1971-07-21",
+    "word_count": 152230
+  },
+  {
+    "id": 45,
+    "title": "A Love Rekindled",
+    "author_id": 44,
+    "genre_id": 5,
+    "publisher_id": 7,
+    "publication_date": "1983-10-10",
+    "word_count": 139850
+  },
+  {
+    "id": 46,
+    "title": "Whispers of Love",
+    "author_id": 40,
+    "genre_id": 5,
+    "publisher_id": 15,
+    "publication_date": "1990-11-19",
+    "word_count": 147092
+  },
+  {
+    "id": 47,
+    "title": "Love's Second Chance",
+    "author_id": 48,
+    "genre_id": 5,
+    "publisher_id": 5,
+    "publication_date": "1995-12-29",
+    "word_count": 113479
+  },
+  {
+    "id": 48,
+    "title": "Eternal Embrace",
+    "author_id": 31,
+    "genre_id": 5,
+    "publisher_id": 10,
+    "publication_date": "2004-07-18",
+    "word_count": 178499
+  },
+  {
+    "id": 49,
+    "title": "Serendipity",
+    "author_id": 50,
+    "genre_id": 5,
+    "publisher_id": 11,
+    "publication_date": "2007-02-15",
+    "word_count": 162382
+  },
+  {
+    "id": 50,
+    "title": "Destined Hearts",
+    "author_id": 35,
+    "genre_id": 5,
+    "publisher_id": 12,
+    "publication_date": "2013-09-27",
+    "word_count": 137930
+  },
+
+  {
+    "id": 51,
+    "title": "Nightmare on Elm Street",
+    "author_id": 26,
+    "genre_id": 6,
+    "publisher_id": 6,
+    "publication_date": "1938-08-22",
+    "word_count": 153798
+  },
+  {
+    "id": 52,
+    "title": "The Haunting",
+    "author_id": 20,
+    "genre_id": 6,
+    "publisher_id": 10,
+    "publication_date": "1945-09-05",
+    "word_count": 119423
+  },
+  {
+    "id": 53,
+    "title": "The Creeping Shadow",
+    "author_id": 44,
+    "genre_id": 6,
+    "publisher_id": 14,
+    "publication_date": "1953-11-10",
+    "word_count": 132978
+  },
+  {
+    "id": 54,
+    "title": "The Dead of Night",
+    "author_id": 27,
+    "genre_id": 6,
+    "publisher_id": 15,
+    "publication_date": "1961-03-27",
+    "word_count": 139534
+  },
+  {
+    "id": 55,
+    "title": "The Possession",
+    "author_id": 50,
+    "genre_id": 6,
+    "publisher_id": 7,
+    "publication_date": "1972-10-16",
+    "word_count": 118690
+  },
+  {
+    "id": 56,
+    "title": "Whispers in the Dark",
+    "author_id": 43,
+    "genre_id": 6,
+    "publisher_id": 5,
+    "publication_date": "1980-06-21",
+    "word_count": 153946
+  },
+  {
+    "id": 57,
+    "title": "The Fear Within",
+    "author_id": 21,
+    "genre_id": 6,
+    "publisher_id": 3,
+    "publication_date": "1987-04-04",
+    "word_count": 137297
+  },
+  {
+    "id": 58,
+    "title": "Phantom's Curse",
+    "author_id": 33,
+    "genre_id": 6,
+    "publisher_id": 8,
+    "publication_date": "1991-12-01",
+    "word_count": 164294
+  },
+  {
+    "id": 59,
+    "title": "The Final Reckoning",
+    "author_id": 32,
+    "genre_id": 6,
+    "publisher_id": 12,
+    "publication_date": "2003-07-15",
+    "word_count": 119847
+  },
+  {
+    "id": 60,
+    "title": "Evil Awakens",
+    "author_id": 34,
+    "genre_id": 6,
+    "publisher_id": 13,
+    "publication_date": "2011-08-30",
+    "word_count": 149487
+  },
+
+  {
+    "id": 61,
+    "title": "The Great War",
+    "author_id": 35,
+    "genre_id": 7,
+    "publisher_id": 12,
+    "publication_date": "1920-11-11",
+    "word_count": 140295
+  },
+  {
+    "id": 62,
+    "title": "Empire of Shadows",
+    "author_id": 48,
+    "genre_id": 7,
+    "publisher_id": 8,
+    "publication_date": "1936-09-10",
+    "word_count": 132794
+  },
+  {
+    "id": 63,
+    "title": "The Queen's Secret",
+    "author_id": 37,
+    "genre_id": 7,
+    "publisher_id": 9,
+    "publication_date": "1949-07-25",
+    "word_count": 156342
+  },
+  {
+    "id": 64,
+    "title": "Rise of a Nation",
+    "author_id": 42,
+    "genre_id": 7,
+    "publisher_id": 11,
+    "publication_date": "1958-12-14",
+    "word_count": 124398
+  },
+  {
+    "id": 65,
+    "title": "The Ancient City",
+    "author_id": 46,
+    "genre_id": 7,
+    "publisher_id": 5,
+    "publication_date": "1965-04-30",
+    "word_count": 143528
+  },
+  {
+    "id": 66,
+    "title": "The Forgotten Dynasty",
+    "author_id": 49,
+    "genre_id": 7,
+    "publisher_id": 13,
+    "publication_date": "1978-02-22",
+    "word_count": 157695
+  },
+  {
+    "id": 67,
+    "title": "Legacy of the Past",
+    "author_id": 30,
+    "genre_id": 7,
+    "publisher_id": 14,
+    "publication_date": "1989-08-12",
+    "word_count": 136490
+  },
+  {
+    "id": 68,
+    "title": "The Historian's Tale",
+    "author_id": 29,
+    "genre_id": 7,
+    "publisher_id": 10,
+    "publication_date": "1994-03-09",
+    "word_count": 142743
+  },
+  {
+    "id": 69,
+    "title": "Secrets of the Ancients",
+    "author_id": 50,
+    "genre_id": 7,
+    "publisher_id": 15,
+    "publication_date": "2003-06-25",
+    "word_count": 119836
+  },
+  {
+    "id": 70,
+    "title": "Warriors of the Past",
+    "author_id": 38,
+    "genre_id": 7,
+    "publisher_id": 11,
+    "publication_date": "2016-04-22",
+    "word_count": 165109
+  },
+
+  {
+    "id": 71,
+    "title": "The Art of War",
+    "author_id": 21,
+    "genre_id": 8,
+    "publisher_id": 5,
+    "publication_date": "1937-03-12",
+    "word_count": 67840
+  },
+  {
+    "id": 72,
+    "title": "A Brief History of Time",
+    "author_id": 30,
+    "genre_id": 8,
+    "publisher_id": 14,
+    "publication_date": "1988-06-15",
+    "word_count": 38462
+  },
+  {
+    "id": 73,
+    "title": "Sapiens: A Brief History of Humankind",
+    "author_id": 42,
+    "genre_id": 8,
+    "publisher_id": 12,
+    "publication_date": "2011-09-04",
+    "word_count": 143698
+  },
+  {
+    "id": 74,
+    "title": "Educated",
+    "author_id": 38,
+    "genre_id": 8,
+    "publisher_id": 9,
+    "publication_date": "2018-03-29",
+    "word_count": 112838
+  },
+  {
+    "id": 75,
+    "title": "The Immortal Life of Henrietta Lacks",
+    "author_id": 40,
+    "genre_id": 8,
+    "publisher_id": 6,
+    "publication_date": "2010-02-24",
+    "word_count": 109216
+  },
+  {
+    "id": 76,
+    "title": "The Wright Brothers",
+    "author_id": 46,
+    "genre_id": 8,
+    "publisher_id": 11,
+    "publication_date": "2015-03-15",
+    "word_count": 113754
+  },
+  {
+    "id": 77,
+    "title": "Unbroken",
+    "author_id": 44,
+    "genre_id": 8,
+    "publisher_id": 7,
+    "publication_date": "2014-11-11",
+    "word_count": 123097
+  },
+  {
+    "id": 78,
+    "title": "Thinking, Fast and Slow",
+    "author_id": 31,
+    "genre_id": 8,
+    "publisher_id": 10,
+    "publication_date": "2011-10-25",
+    "word_count": 117580
+  },
+  {
+    "id": 79,
+    "title": "The Emperor of All Maladies",
+    "author_id": 33,
+    "genre_id": 8,
+    "publisher_id": 8,
+    "publication_date": "2010-11-16",
+    "word_count": 139953
+  },
+  {
+    "id": 80,
+    "title": "The Power of Habit",
+    "author_id": 35,
+    "genre_id": 8,
+    "publisher_id": 13,
+    "publication_date": "2012-06-01",
+    "word_count": 108432
+  },
+
+  {
+    "id": 81,
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author_id": 50,
+    "genre_id": 9,
+    "publisher_id": 15,
+    "publication_date": "1997-06-26",
+    "word_count": 76948
+  },
+  {
+    "id": 82,
+    "title": "The Hunger Games",
+    "author_id": 48,
+    "genre_id": 9,
+    "publisher_id": 5,
+    "publication_date": "2008-09-14",
+    "word_count": 101564
+  },
+  {
+    "id": 83,
+    "title": "Percy Jackson & The Olympians",
+    "author_id": 42,
+    "genre_id": 9,
+    "publisher_id": 12,
+    "publication_date": "2005-07-01",
+    "word_count": 97929
+  },
+  {
+    "id": 84,
+    "title": "Divergent",
+    "author_id": 27,
+    "genre_id": 9,
+    "publisher_id": 8,
+    "publication_date": "2011-04-21",
+    "word_count": 104356
+  },
+  {
+    "id": 85,
+    "title": "The Maze Runner",
+    "author_id": 40,
+    "genre_id": 9,
+    "publisher_id": 7,
+    "publication_date": "2009-10-06",
+    "word_count": 113418
+  },
+  {
+    "id": 86,
+    "title": "The Fault in Our Stars",
+    "author_id": 31,
+    "genre_id": 9,
+    "publisher_id": 10,
+    "publication_date": "2012-01-10",
+    "word_count": 73718
+  },
+  {
+    "id": 87,
+    "title": "Looking for Alaska",
+    "author_id": 46,
+    "genre_id": 9,
+    "publisher_id": 14,
+    "publication_date": "2005-03-03",
+    "word_count": 91830
+  },
+  {
+    "id": 88,
+    "title": "A Court of Thorns and Roses",
+    "author_id": 39,
+    "genre_id": 9,
+    "publisher_id": 13,
+    "publication_date": "2015-05-05",
+    "word_count": 118927
+  },
+  {
+    "id": 89,
+    "title": "The Book Thief",
+    "author_id": 44,
+    "genre_id": 9,
+    "publisher_id": 6,
+    "publication_date": "2005-03-14",
+    "word_count": 55046
+  },
+  {
+    "id": 90,
+    "title": "Eleanor & Park",
+    "author_id": 37,
+    "genre_id": 9,
+    "publisher_id": 11,
+    "publication_date": "2012-02-26",
+    "word_count": 120549
+  },
+
+  {
+    "id": 91,
+    "title": "The Diary of a Young Girl",
+    "author_id": 27,
+    "genre_id": 10,
+    "publisher_id": 8,
+    "publication_date": "1947-06-25",
+    "word_count": 73138
+  },
+  {
+    "id": 92,
+    "title": "Long Walk to Freedom",
+    "author_id": 42,
+    "genre_id": 10,
+    "publisher_id": 5,
+    "publication_date": "1994-11-02",
+    "word_count": 243679
+  },
+  {
+    "id": 93,
+    "title": "The Autobiography of Malcolm X",
+    "author_id": 35,
+    "genre_id": 10,
+    "publisher_id": 11,
+    "publication_date": "1965-10-29",
+    "word_count": 132128
+  },
+  {
+    "id": 94,
+    "title": "Steve Jobs",
+    "author_id": 31,
+    "genre_id": 10,
+    "publisher_id": 7,
+    "publication_date": "2011-10-24",
+    "word_count": 60872
+  },
+  {
+    "id": 95,
+    "title": "Becoming",
+    "author_id": 44,
+    "genre_id": 10,
+    "publisher_id": 12,
+    "publication_date": "2018-11-13",
+    "word_count": 40321
+  },
+  {
+    "id": 96,
+    "title": "The Immortal Life of Henrietta Lacks",
+    "author_id": 40,
+    "genre_id": 10,
+    "publisher_id": 6,
+    "publication_date": "2010-02-24",
+    "word_count": 109216
+  },
+  {
+    "id": 97,
+    "title": "When Breath Becomes Air",
+    "author_id": 46,
+    "genre_id": 10,
+    "publisher_id": 13,
+    "publication_date": "2016-01-12",
+    "word_count": 104104
+  },
+  {
+    "id": 98,
+    "title": "Educated",
+    "author_id": 38,
+    "genre_id": 10,
+    "publisher_id": 9,
+    "publication_date": "2018-03-29",
+    "word_count": 112838
+  },
+  {
+    "id": 99,
+    "title": "I Am Malala",
+    "author_id": 48,
+    "genre_id": 10,
+    "publisher_id": 5,
+    "publication_date": "2013-10-08",
+    "word_count": 101210
+  },
+  {
+    "id": 100,
+    "title": "The Glass Castle",
+    "author_id": 37,
+    "genre_id": 10,
+    "publisher_id": 14,
+    "publication_date": "2005-08-16",
+    "word_count": 287641
+  },
+
+  {
+    "id": 101,
+    "title": "Galactic Odyssey",
+    "author_id": 4,
+    "genre_id": 1,
+    "publisher_id": 2,
+    "publication_date": "2000-01-10",
+    "word_count": 183445
+  },
+  {
+    "id": 102,
+    "title": "Quantum Leap",
+    "author_id": 5,
+    "genre_id": 1,
+    "publisher_id": 3,
+    "publication_date": "1995-02-15",
+    "word_count": 170201
+  },
+  {
+    "id": 103,
+    "title": "Starborn Legacy",
+    "author_id": 6,
+    "genre_id": 1,
+    "publisher_id": 4,
+    "publication_date": "1999-03-20",
+    "word_count": 142560
+  },
+  {
+    "id": 104,
+    "title": "The Fifth Dimension",
+    "author_id": 7,
+    "genre_id": 1,
+    "publisher_id": 5,
+    "publication_date": "2003-04-25",
+    "word_count": 198342
+  },
+  {
+    "id": 105,
+    "title": "Android Dreams",
+    "author_id": 8,
+    "genre_id": 1,
+    "publisher_id": 6,
+    "publication_date": "1950-05-30",
+    "word_count": 175640
+  },
+
+  {
+    "id": 106,
+    "title": "Dragons of Eldoria",
+    "author_id": 9,
+    "genre_id": 2,
+    "publisher_id": 7,
+    "publication_date": "2020-01-20",
+    "word_count": 159832
+  },
+  {
+    "id": 107,
+    "title": "The Enchanted Forest",
+    "author_id": 10,
+    "genre_id": 2,
+    "publisher_id": 8,
+    "publication_date": "2019-02-25",
+    "word_count": 168404
+  },
+  {
+    "id": 108,
+    "title": "Sorcerer's Realm",
+    "author_id": 11,
+    "genre_id": 2,
+    "publisher_id": 9,
+    "publication_date": "2000-03-30",
+    "word_count": 147290
+  },
+  {
+    "id": 109,
+    "title": "The Mystic Quest",
+    "author_id": 12,
+    "genre_id": 2,
+    "publisher_id": 10,
+    "publication_date": "1987-04-15",
+    "word_count": 162089
+  },
+  {
+    "id": 110,
+    "title": "Wizards of Avalon",
+    "author_id": 13,
+    "genre_id": 2,
+    "publisher_id": 11,
+    "publication_date": "1978-05-10",
+    "word_count": 177455
+  },
+
+  {
+    "id": 111,
+    "title": "The Secret Society",
+    "author_id": 14,
+    "genre_id": 3,
+    "publisher_id": 12,
+    "publication_date": "2023-01-15",
+    "word_count": 153670
+  },
+  {
+    "id": 112,
+    "title": "Murder in the Mansion",
+    "author_id": 15,
+    "genre_id": 3,
+    "publisher_id": 13,
+    "publication_date": "2021-02-20",
+    "word_count": 142963
+  },
+  {
+    "id": 113,
+    "title": "The Vanishing Act",
+    "author_id": 16,
+    "genre_id": 3,
+    "publisher_id": 14,
+    "publication_date": "2014-03-05",
+    "word_count": 158234
+  },
+  {
+    "id": 114,
+    "title": "The Hidden Clue",
+    "author_id": 17,
+    "genre_id": 3,
+    "publisher_id": 15,
+    "publication_date": "1954-04-10",
+    "word_count": 176488
+  },
+  {
+    "id": 115,
+    "title": "The Final Alibi",
+    "author_id": 18,
+    "genre_id": 3,
+    "publisher_id": 6,
+    "publication_date": "1969-05-25",
+    "word_count": 169832
+  },
+
+  {
+    "id": 116,
+    "title": "The Last Witness",
+    "author_id": 19,
+    "genre_id": 4,
+    "publisher_id": 7,
+    "publication_date": "1980-01-25",
+    "word_count": 182903
+  },
+  {
+    "id": 117,
+    "title": "Shattered Truth",
+    "author_id": 20,
+    "genre_id": 4,
+    "publisher_id": 8,
+    "publication_date": "1990-02-10",
+    "word_count": 173401
+  },
+  {
+    "id": 118,
+    "title": "Deadly Games",
+    "author_id": 21,
+    "genre_id": 4,
+    "publisher_id": 9,
+    "publication_date": "2001-03-15",
+    "word_count": 165932
+  },
+  {
+    "id": 119,
+    "title": "The Silent Killer",
+    "author_id": 22,
+    "genre_id": 4,
+    "publisher_id": 10,
+    "publication_date": "2009-04-30",
+    "word_count": 147601
+  },
+  {
+    "id": 120,
+    "title": "Code of Deception",
+    "author_id": 23,
+    "genre_id": 4,
+    "publisher_id": 11,
+    "publication_date": "1949-05-20",
+    "word_count": 179650
+  },
+
+  {
+    "id": 121,
+    "title": "Love Under the Stars",
+    "author_id": 24,
+    "genre_id": 5,
+    "publisher_id": 12,
+    "publication_date": "2000-01-30",
+    "word_count": 134879
+  },
+  {
+    "id": 122,
+    "title": "Heart's Path",
+    "author_id": 25,
+    "genre_id": 5,
+    "publisher_id": 13,
+    "publication_date": "2001-02-25",
+    "word_count": 142023
+  },
+  {
+    "id": 123,
+    "title": "Eternal Affection",
+    "author_id": 26,
+    "genre_id": 5,
+    "publisher_id": 14,
+    "publication_date": "2002-03-12",
+    "word_count": 153470
+  },
+  {
+    "id": 124,
+    "title": "Love's Journey",
+    "author_id": 27,
+    "genre_id": 5,
+    "publisher_id": 15,
+    "publication_date": "2003-04-15",
+    "word_count": 146829
+  },
+  {
+    "id": 125,
+    "title": "Together Forever",
+    "author_id": 28,
+    "genre_id": 5,
+    "publisher_id": 6,
+    "publication_date": "2004-05-05",
+    "word_count": 139240
+  },
+
+  {
+    "id": 126,
+    "title": "Shadows of Terror",
+    "author_id": 29,
+    "genre_id": 6,
+    "publisher_id": 10,
+    "publication_date": "2005-01-10",
+    "word_count": 155678
+  },
+  {
+    "id": 127,
+    "title": "The Haunting Hour",
+    "author_id": 30,
+    "genre_id": 6,
+    "publisher_id": 11,
+    "publication_date": "2006-02-05",
+    "word_count": 168394
+  },
+  {
+    "id": 128,
+    "title": "Creepy Tales",
+    "author_id": 31,
+    "genre_id": 6,
+    "publisher_id": 12,
+    "publication_date": "2007-03-15",
+    "word_count": 140287
+  },
+  {
+    "id": 129,
+    "title": "Gothic Shadows",
+    "author_id": 32,
+    "genre_id": 6,
+    "publisher_id": 13,
+    "publication_date": "2008-04-20",
+    "word_count": 163992
+  },
+  {
+    "id": 130,
+    "title": "Dark Descent",
+    "author_id": 33,
+    "genre_id": 6,
+    "publisher_id": 14,
+    "publication_date": "2009-05-15",
+    "word_count": 171429
+  },
+
+  {
+    "id": 131,
+    "title": "The Kingslayer",
+    "author_id": 34,
+    "genre_id": 7,
+    "publisher_id": 15,
+    "publication_date": "1989-01-25",
+    "word_count": 154804
+  },
+  {
+    "id": 132,
+    "title": "Legends of the Past",
+    "author_id": 35,
+    "genre_id": 7,
+    "publisher_id": 6,
+    "publication_date": "1978-02-20",
+    "word_count": 162789
+  },
+  {
+    "id": 133,
+    "title": "The Lost Kingdom",
+    "author_id": 36,
+    "genre_id": 7,
+    "publisher_id": 7,
+    "publication_date": "1987-03-15",
+    "word_count": 174956
+  },
+  {
+    "id": 134,
+    "title": "Historical Echoes",
+    "author_id": 37,
+    "genre_id": 7,
+    "publisher_id": 8,
+    "publication_date": "1977-04-10",
+    "word_count": 147222
+  },
+  {
+    "id": 135,
+    "title": "A Tale of Two Worlds",
+    "author_id": 38,
+    "genre_id": 7,
+    "publisher_id": 9,
+    "publication_date": "1999-05-05",
+    "word_count": 158319
+  },
+
+  {
+    "id": 136,
+    "title": "Science Unveiled",
+    "author_id": 39,
+    "genre_id": 8,
+    "publisher_id": 10,
+    "publication_date": "2020-01-15",
+    "word_count": 187260
+  },
+  {
+    "id": 137,
+    "title": "Understanding Culture",
+    "author_id": 40,
+    "genre_id": 8,
+    "publisher_id": 11,
+    "publication_date": "2019-02-10",
+    "word_count": 172468
+  },
+  {
+    "id": 138,
+    "title": "The Art of Leadership",
+    "author_id": 41,
+    "genre_id": 8,
+    "publisher_id": 12,
+    "publication_date": "2018-03-05",
+    "word_count": 161384
+  },
+  {
+    "id": 139,
+    "title": "History's Mysteries",
+    "author_id": 42,
+    "genre_id": 8,
+    "publisher_id": 13,
+    "publication_date": "2017-04-20",
+    "word_count": 178579
+  },
+  {
+    "id": 140,
+    "title": "Philosophical Views",
+    "author_id": 43,
+    "genre_id": 8,
+    "publisher_id": 14,
+    "publication_date": "1999-05-15",
+    "word_count": 155702
+  },
+
+  {
+    "id": 141,
+    "title": "Summer Adventures",
+    "author_id": 44,
+    "genre_id": 9,
+    "publisher_id": 15,
+    "publication_date": "1948-01-20",
+    "word_count": 139489
+  },
+  {
+    "id": 142,
+    "title": "The Secret Club",
+    "author_id": 45,
+    "genre_id": 9,
+    "publisher_id": 6,
+    "publication_date": "1937-02-15",
+    "word_count": 152708
+  },
+  {
+    "id": 143,
+    "title": "A New Beginning",
+    "author_id": 46,
+    "genre_id": 9,
+    "publisher_id": 7,
+    "publication_date": "1993-03-10",
+    "word_count": 143982
+  },
+  {
+    "id": 144,
+    "title": "The Magical Quest",
+    "author_id": 47,
+    "genre_id": 9,
+    "publisher_id": 8,
+    "publication_date": "2004-04-05",
+    "word_count": 167293
+  },
+  {
+    "id": 145,
+    "title": "Voices of Youth",
+    "author_id": 48,
+    "genre_id": 9,
+    "publisher_id": 9,
+    "publication_date": "2009-05-01",
+    "word_count": 155680
+  },
+
+  {
+    "id": 146,
+    "title": "An Unforgettable Life",
+    "author_id": 49,
+    "genre_id": 10,
+    "publisher_id": 10,
+    "publication_date": "1997-01-30",
+    "word_count": 159043
+  },
+  {
+    "id": 147,
+    "title": "Through My Eyes",
+    "author_id": 50,
+    "genre_id": 10,
+    "publisher_id": 11,
+    "publication_date": "1976-02-25",
+    "word_count": 167482
+  },
+  {
+    "id": 148,
+    "title": "Unseen Struggles",
+    "author_id": 50,
+    "genre_id": 10,
+    "publisher_id": 12,
+    "publication_date": "1980-03-20",
+    "word_count": 175342
+  },
+  {
+    "id": 149,
+    "title": "My Life, My Story",
+    "author_id": 10,
+    "genre_id": 10,
+    "publisher_id": 13,
+    "publication_date": "2007-04-15",
+    "word_count": 143852
+  },
+  {
+    "id": 150,
+    "title": "Echoes of My Past",
+    "author_id": 7,
+    "genre_id": 10,
+    "publisher_id": 14,
+    "publication_date": "2015-05-10",
+    "word_count": 158475
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "name": "Prosacco, MacGyver and Rosenbaum",
+    "founding_date": "1953-07-11"
+  },
+  { "id": 2, "name": "Moore, Brakus and Ortiz", "founding_date": "1967-04-06" },
+  {
+    "id": 3,
+    "name": "Reilly, Schulist and Thompson",
+    "founding_date": "1986-08-17"
+  },
+  { "id": 4, "name": "Kihn Group", "founding_date": "1999-12-03" },
+  { "id": 5, "name": "Cole-Kreiger", "founding_date": "1967-05-05" },
+  {
+    "id": 6,
+    "name": "Romaguera, Leannon and Lynch",
+    "founding_date": "1976-03-17"
+  },
+  { "id": 7, "name": "Abshire-Skiles", "founding_date": "1929-03-29" },
+  { "id": 8, "name": "Bins-O'Reilly", "founding_date": "1971-05-27" },
+  {
+    "id": 9,
+    "name": "Hackett, Fisher and Gutmann",
+    "founding_date": "1969-09-25"
+  },
+  { "id": 10, "name": "Kemmer-Stamm", "founding_date": "1980-08-06" },
+  { "id": 11, "name": "Schneider-Macejkovic", "founding_date": "1980-06-02" },
+  { "id": 12, "name": "Hills-Nolan", "founding_date": "1953-12-04" },
+  {
+    "id": 13,
+    "name": "Green, Turcotte and Reichel",
+    "founding_date": "1950-01-19"
+  },
+  { "id": 14, "name": "Ritchie and Sons", "founding_date": "1991-10-12" },
+  {
+    "id": 15,
+    "name": "Schneider, Hackett and Dibbert",
+    "founding_date": "1990-01-28"
+  }
+]
