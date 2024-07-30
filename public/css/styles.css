@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.book-img {
+  height: 120px;
+  width: 120px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: lightblue;
+  margin-bottom: 10px;
+  width: 400px;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 20px;
+  gap: 16px;
+}
+
+.book-title {
+  font-size: 28px;
+}
+
+.book-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.genre {
+  font-size: 16px;
+}

@@ -1,9 +1,27 @@
+<head>
+  <link href="../public/css/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
 <body>
   <%- include('./partials/nav.ejs') %>
 
   <h1>Results</h1>
   <% if (books.length > 0) { %> <% books.forEach(book => { %>
-  <p><%= book.title %></p>
+  <div class="book-card">
+    <div>
+      <h3 class="book-title"><%= book.title %></h3>
+      <span class="author"><%= book.author %></span>
+    </div>
+
+    <div class="book-content">
+      <img class="book-img" src="../public/assets/book.png" alt="" />
+      <div class="book-info">
+        <span class="genre"><%= book.genre %></span>
+        <span class="date"><%= book.publication_date.getFullYear() %></span>
+        <span>Published by <%= book.publisher %></span>
+      </div>
+    </div>
+  </div>
   <% }) %> <% } else { %>
   <p>No items found.</p>
   <% } %>

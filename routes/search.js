@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { getAllBooks } = require("../services/pg.search.dal");
+const { getAllBooks, getByText } = require("../services/pg.search.dal");
 
 // /search
 router.get("/", async (req, res) => {
@@ -13,8 +13,7 @@ router.get("/", async (req, res) => {
 
 router.get("/results", async (req, res) => {
   try {
-    console.log("trying to get all books");
-    let books = await getAllBooks();
+    let books = await getByText("%da%", "author ASC");
     res.render("results", { books });
   } catch (error) {}
 });
