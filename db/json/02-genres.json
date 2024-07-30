@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Science Fiction" },
+  { "id": 2, "name": "Fantasy" },
+  { "id": 3, "name": "Mystery" },
+  { "id": 4, "name": "Thriller" },
+  { "id": 5, "name": "Romance" },
+  { "id": 6, "name": "Horror" },
+  { "id": 7, "name": "Historical Fiction" },
+  { "id": 8, "name": "Non-Fiction" },
+  { "id": 9, "name": "Young Adult" },
+  { "id": 10, "name": "Biography" }
+]

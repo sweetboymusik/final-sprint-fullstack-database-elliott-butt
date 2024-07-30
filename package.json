@@ -2,7 +2,7 @@
   "name": "final-sprint-fullstack-database-elliott-butt",
   "version": "1.0.0",
   "description": "Fullstack/Database Final Sprint",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
