@@ -22,6 +22,9 @@ app.use("/public", express.static("public"));
 const search = require("./routes/search");
 app.use("/search", search);
 
+const results = require("./routes/results");
+app.use("/results", results);
+
 const auth = require("./routes/auth");
 app.use("/auth", auth);
 

@@ -1,8 +1,8 @@
 const dal = require("./pg.db");
 const fs = require("fs");
 
+// load the sql query
 const sqlQuery = fs.readFileSync("./db/sql/05-select.sql");
-console.log(sqlQuery.toString());
 
 var getAllBooks = function () {
   return new Promise(function (resolve, reject) {
@@ -18,7 +18,6 @@ var getAllBooks = function () {
   });
 };
 
-let date = new Date();
 var getByText = function (text, sort) {
   return new Promise(function (resolve, reject) {
     const sql = sqlQuery + sort;
