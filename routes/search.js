@@ -41,9 +41,26 @@ router.post("/", authenticateToken, async (req, res) => {
       res.redirect(`./results/postgres/${req.body.search}`);
       // query mongo db
     } else if (req.body.db === "mongo") {
+      // log search
+      emitter.emit(
+        "search",
+        "search",
+        "SEARCH",
+        "MONGO",
+        `Search for '${req.body.search}'`
+      );
+
       res.redirect(`/results/mongo/${req.body.search}`);
       // query both dbs
     } else {
+      // log search
+      emitter.emit(
+        "search",
+        "search",
+        "SEARCH",
+        "BOTH",
+        `Search for '${req.body.search}'`
+      );
       res.redirect(`/results/both/${req.body.search}`);
     }
   } catch (error) {}

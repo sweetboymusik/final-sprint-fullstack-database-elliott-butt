@@ -11,6 +11,7 @@ const emitter = new events.EventEmitter();
 // event listeners
 emitter.addListener("search", onEvent);
 emitter.addListener("request", onEvent);
+emitter.addListener("auth", onEvent);
 
 // event-log function
 function onEvent(event, type, status, message) {

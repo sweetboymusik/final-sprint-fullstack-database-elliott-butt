@@ -34,6 +34,15 @@ router.post("/", async (req, res) => {
     let user = await getLoginByUsername(req.body.username);
 
     if (user === undefined || user === null) {
+      // log auth event
+      emitter.emit(
+        "auth",
+        "auth",
+        "LOGIN",
+        "FAILURE",
+        `user '${req.body.username}' not found`
+      );
+
       req.session.status = "Username is incorrect.";
 
       // log POST request failure
@@ -53,7 +62,16 @@ router.post("/", async (req, res) => {
       const token = jwt.sign(
         { username: user.username },
         process.env.JWT_SECRET,
-        { expiresIn: "1m" }
+        { expiresIn: "5m" }
+      );
+
+      // log auth event
+      emitter.emit(
+        "auth",
+        "auth",
+        "LOGIN",
+        "SUCCESS",
+        `user '${user.username}' logged in`
       );
 
       // log POST request success
@@ -68,11 +86,20 @@ router.post("/", async (req, res) => {
       req.session.user = user;
       req.session.token = token;
       req.session.status = "Happy for your return " + user.username;
-      res.redirect("/");
+      res.redirect("/search");
 
       return;
     } else {
       req.session.status = "Password is incorrect.";
+
+      // log auth event
+      emitter.emit(
+        "auth",
+        "auth",
+        "LOGIN",
+        "FAILURE",
+        `password for user '${user.username}' incorrect`
+      );
 
       // log POST request failure
       emitter.emit(
@@ -89,7 +116,6 @@ router.post("/", async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    // res.render("503");
     return;
   }
 });
@@ -144,6 +170,15 @@ router.post("/new", async (req, res) => {
 
         req.session.status = `${constraint} already exists, please try another.`;
 
+        // log auth event
+        emitter.emit(
+          "auth",
+          "auth",
+          "REGISTER",
+          "FAILURE",
+          `user '${req.body.username}' already exists`
+        );
+
         // log POST request failure
         emitter.emit(
           "request",
@@ -158,6 +193,15 @@ router.post("/new", async (req, res) => {
         return;
       } else {
         req.session.status = "New account created, please login.";
+
+        // log auth event
+        emitter.emit(
+          "auth",
+          "auth",
+          "REGISTER",
+          "SUCCESS",
+          `user '${req.body.username}' created`
+        );
 
         // log POST request success
         emitter.emit(
@@ -174,6 +218,9 @@ router.post("/new", async (req, res) => {
       }
     } else {
       req.session.status = "Not enough form fields completed.";
+
+      // log auth event
+      emitter.emit("auth", "auth", "REGISTER", "FAILURE", `form incomplete`);
 
       // log POST request failure
       emitter.emit(
@@ -195,10 +242,23 @@ router.post("/new", async (req, res) => {
 
 // logout route (/auth/exit)
 router.get("/exit", async (req, res) => {
+  let user = req.session.user.username;
   req.session.destroy((err) => {
     if (err) {
+      // log auth event
+      emitter.emit("auth", "auth", "LOGOUT", "FAILURE", `could not logout`);
+
       return res.redirect("/");
     }
+
+    // log auth event
+    emitter.emit(
+      "auth",
+      "auth",
+      "LOGOUT",
+      "SUCCESS",
+      `user '${user}' logged out`
+    );
 
     // log GET request
     emitter.emit(
