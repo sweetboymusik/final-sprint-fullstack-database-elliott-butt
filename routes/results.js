@@ -6,6 +6,9 @@ const router = express.Router();
 const pgDAL = require("../services/pg.search.dal");
 const mDAL = require("../services/m.search.dal");
 
+// import event emitter
+const emitter = require("../services/log.js");
+
 router.get("/", async (req, res) => {
   try {
     res.render("results");

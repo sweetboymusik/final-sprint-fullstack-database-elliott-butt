@@ -1,9 +1,10 @@
 <%- include('./partials/head.ejs') %>
 
 <body>
-  <h1>Owlbear Books</h1>
-  <p>Welcome to Owlbear Books! Please login to continue.</p>
-  <form action="/auth" method="post" class="login">
+  <%- include('./partials/nav.ejs') %>
+
+  <h1>Login</h1>
+  <form action="/auth/new" method="post">
     <input type="text" name="username" id="username" placeholder="Username" />
     <input
       type="password"
@@ -11,7 +12,7 @@
       id="password"
       placeholder="Password"
     />
-    <p>Don't have an account? <a href="/auth/new">Register Here</a></p>
-    <button type="submit">Login</button>
+    <input type="text" name="email" id="email" placeholder="Email" />
+    <button type="submit">Register</button>
   </form>
 </body>

@@ -1,6 +1,7 @@
 // import libraries
 const express = require("express");
 const methodOverride = require("method-override");
+const session = require("express-session");
 
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
@@ -15,6 +16,13 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 // set up routes
 app.use("/public", express.static("public"));

@@ -2,15 +2,17 @@
 const express = require("express");
 const router = express.Router();
 
+const { authenticateToken } = require("../services/auth");
+
 // base search route
-router.get("/", async (req, res) => {
+router.get("/", authenticateToken, async (req, res) => {
   try {
     res.render("search");
   } catch (error) {}
 });
 
 // redirect to correct route based on db chosen
-router.post("/", async (req, res) => {
+router.post("/", authenticateToken, async (req, res) => {
   try {
     // query postgres db
     if (req.body.db === "postgres") {
