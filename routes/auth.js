@@ -3,12 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 // import required libraries
-const bcrypt = require("bcrypt");
-const uuid = require("uuid");
-const jwt = require("jsonwebtoken");
-
-// import required auth functions
-const { addLogin, getLoginByUsername } = require("../services/pg.auth.dal");
+const passport = require("passport");
 
 // import event emitter
 const { emitter } = require("../services/log");
@@ -29,11 +24,13 @@ router.get("/", async (req, res) => {
 });
 
 // root auth route POST (/auth)
-router.post("/", async (req, res) => {
-  try {
-    let user = await getLoginByUsername(req.body.username);
+router.post("/", (req, res, next) => {
+  passport.authenticate("local", (err, user, info) => {
+    if (err) {
+      return next(err);
+    }
 
-    if (user === undefined || user === null) {
+    if (!user) {
       // log auth event
       emitter.emit(
         "auth",
@@ -43,7 +40,7 @@ router.post("/", async (req, res) => {
         `user '${req.body.username}' not found`
       );
 
-      req.session.status = "Username is incorrect.";
+      req.session.status = info.message || "Username or password is incorrect.";
 
       // log POST request failure
       emitter.emit(
@@ -54,16 +51,13 @@ router.post("/", async (req, res) => {
         `/auth route POST failure (${req.session.status})`
       );
 
-      res.redirect("/auth");
-      return;
+      return res.redirect("/auth");
     }
 
-    if (await bcrypt.compare(req.body.password, user.password)) {
-      const token = jwt.sign(
-        { username: user.username },
-        process.env.JWT_SECRET,
-        { expiresIn: "5m" }
-      );
+    req.logIn(user, (err) => {
+      if (err) {
+        return next(err);
+      }
 
       // log auth event
       emitter.emit(
@@ -83,41 +77,10 @@ router.post("/", async (req, res) => {
         `/auth route POST success`
       );
 
-      req.session.user = user;
-      req.session.token = token;
       req.session.status = "Happy for your return " + user.username;
-      res.redirect("/search");
-
-      return;
-    } else {
-      req.session.status = "Password is incorrect.";
-
-      // log auth event
-      emitter.emit(
-        "auth",
-        "auth",
-        "LOGIN",
-        "FAILURE",
-        `password for user '${user.username}' incorrect`
-      );
-
-      // log POST request failure
-      emitter.emit(
-        "request",
-        "request",
-        "POST",
-        res.statusCode,
-        `/auth route POST failure (${req.session.status})`
-      );
-
-      res.redirect("/auth");
-
-      return;
-    }
-  } catch (error) {
-    console.log(error);
-    return;
-  }
+      return res.redirect("/search");
+    });
+  })(req, res, next);
 });
 
 // new user registration route (/auth/new)
@@ -136,119 +99,53 @@ router.get("/new", async (req, res) => {
 });
 
 // new user registration route POST (/auth/new)
-router.post("/new", async (req, res) => {
-  try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+router.post(
+  "/",
+  passport.authenticate("local", {
+    failureRedirect: "/auth",
+    failureMessage: "Invalid username or password.",
+  }),
+  (req, res) => {
+    // log auth event
+    emitter.emit(
+      "auth",
+      "auth",
+      "LOGIN",
+      "SUCCESS",
+      `user '${req.user.username}' logged in`
+    );
 
-    if (req.body.email && req.body.username && req.body.password) {
-      let result = await addLogin(
-        req.body.username,
-        req.body.email,
-        hashedPassword,
-        uuid.v4()
-      );
+    // log POST request success
+    emitter.emit(
+      "request",
+      "request",
+      "POST",
+      res.statusCode,
+      `/auth route POST success`
+    );
 
-      if (result.code === "23505" || result.code === 11000) {
-        let constraint;
-
-        function setConstraint(indexName) {
-          const constraintsMap = {
-            unique_username: "Username",
-            unique_email: "Email address",
-          };
-
-          return constraintsMap[indexName] || indexName;
-        }
-
-        if (result.code === "23505") {
-          constraint = setConstraint(result.constraint);
-        } else if (result.code === 11000) {
-          const match = result.errmsg.match(/index: (\w+)/);
-          const indexName = match ? match[1] : "unknown";
-          constraint = setConstraint(indexName);
-        }
-
-        req.session.status = `${constraint} already exists, please try another.`;
-
-        // log auth event
-        emitter.emit(
-          "auth",
-          "auth",
-          "REGISTER",
-          "FAILURE",
-          `user '${req.body.username}' already exists`
-        );
-
-        // log POST request failure
-        emitter.emit(
-          "request",
-          "request",
-          "POST",
-          res.statusCode,
-          `/auth/new route POST failure (${req.session.status})`
-        );
-
-        res.redirect("/auth/new");
-
-        return;
-      } else {
-        req.session.status = "New account created, please login.";
-
-        // log auth event
-        emitter.emit(
-          "auth",
-          "auth",
-          "REGISTER",
-          "SUCCESS",
-          `user '${req.body.username}' created`
-        );
-
-        // log POST request success
-        emitter.emit(
-          "request",
-          "request",
-          "POST",
-          res.statusCode,
-          `/auth/new route POST success`
-        );
-
-        res.redirect("/auth");
-
-        return;
-      }
-    } else {
-      req.session.status = "Not enough form fields completed.";
-
-      // log auth event
-      emitter.emit("auth", "auth", "REGISTER", "FAILURE", `form incomplete`);
-
-      // log POST request failure
-      emitter.emit(
-        "request",
-        "request",
-        "POST",
-        res.statusCode,
-        `/auth/new route POST failure (${req.session.status})`
-      );
-
-      res.redirect("/auth/new");
-      return;
-    }
-  } catch (error) {
-    res.render("503");
-    return;
+    req.session.status = "Happy for your return " + req.user.username;
+    res.redirect("/search");
   }
-});
+);
 
 // logout route (/auth/exit)
-router.get("/exit", async (req, res) => {
-  let user = req.session.user.username;
-  req.session.destroy((err) => {
+router.get("/exit", (req, res, next) => {
+  // Get the username before session is destroyed
+  const user = req.user ? req.user.username : "Unknown User";
+
+  req.logout((err) => {
     if (err) {
       // log auth event
-      emitter.emit("auth", "auth", "LOGOUT", "FAILURE", `could not logout`);
+      emitter.emit(
+        "auth",
+        "auth",
+        "LOGOUT",
+        "FAILURE",
+        `could not logout user '${user}'`
+      );
 
-      return res.redirect("/");
+      return next(err); // Use next() to handle errors if needed
     }
 
     // log auth event
@@ -269,6 +166,7 @@ router.get("/exit", async (req, res) => {
       `/exit route accessed`
     );
 
+    // Clear the session cookie
     res.clearCookie("connect.sid");
     res.redirect("/auth");
   });
