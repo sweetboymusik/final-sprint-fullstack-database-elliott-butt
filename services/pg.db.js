@@ -1,3 +1,5 @@
+// postgresql db connection
+
 // import pg Pool
 const Pool = require("pg").Pool;
 
