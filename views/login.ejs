@@ -1,7 +1,7 @@
 <%- include('./partials/head.ejs') %>
 
 <body>
-  <h1>Owlbear Books</h1>
+  <%- include('./partials/nav.ejs') %> <%- include('./partials/header.ejs') %>
   <p>Welcome to Owlbear Books! Please login to continue.</p>
   <form action="/auth" method="post" class="login">
     <input type="text" name="username" id="username" placeholder="Username" />

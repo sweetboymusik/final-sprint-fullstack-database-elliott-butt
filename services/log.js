@@ -9,35 +9,31 @@ const { v4: uuid } = require("uuid");
 const emitter = new events.EventEmitter();
 
 // event listeners
-emitter.addListener("search", onSearch);
+emitter.addListener("search", onEvent);
+emitter.addListener("request", onEvent);
+emitter.addListener("auth", onEvent);
 
 // event-log function
-async function onSearch(event, type, status, message) {
+function onEvent(event, type, status, message) {
   const dateTime = `${format(new Date(), "yyyyMMdd\tHH:mm:ss")}`;
   const year = `${getYear(new Date())}`;
   const logItem = `${dateTime}\t${type}\t${status}\t${message}\t${uuid()}`;
 
-  console.log("here");
-
   try {
-    const currFolder = "../logs/" + getYear(new Date());
-    if (!fs.existsSync(path.join(__dirname, "../logs/"))) {
-      // if the parent directory logs/ doesn't exist, create it
-      await fsPromises.mkdir(path.join(__dirname, "../logs/"));
-      if (!fs.existsSync(path.join(__dirname, currFolder))) {
-        // create the directory for the year ./logs/yyyy
-        await fsPromises.mkdir(path.join(__dirname, currFolder));
-      }
-    } else {
-      if (!fs.existsSync(path.join(__dirname, currFolder))) {
-        await fsPromises.mkdir(path.join(__dirname, currFolder));
-      }
+    // check if logs/ exists
+    if (!fs.existsSync(path.join(__dirname, "..", "logs"))) {
+      fs.mkdirSync(path.join(__dirname, "..", "logs"));
     }
 
-    const fileName = `${format(new Date(), "yyyyMMdd")}` + `_search_events.log`;
+    // check if current year folder exists
+    if (!fs.existsSync(path.join(__dirname, "..", "logs", year))) {
+      fs.mkdirSync(path.join(__dirname, "..", "logs", year));
+    }
 
+    const fileName =
+      `${format(new Date(), "yyyyMMdd")}` + `_${event}_events.log`;
     fs.appendFileSync(
-      path.join(__dirname, "..", "logs", event, year, fileName),
+      path.join(__dirname, "..", "logs", year, fileName),
       logItem + "\n"
     );
   } catch (error) {
