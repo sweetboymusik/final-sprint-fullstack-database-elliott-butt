@@ -3,8 +3,10 @@ const express = require("express");
 const methodOverride = require("method-override");
 const session = require("express-session");
 
-const { authenticateToken } = require("./services/auth");
+// import passport configuration
+const { passport } = require("./services/passport");
 
+// import .env file
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
@@ -14,6 +16,7 @@ const PORT = 3000;
 
 // configure express
 const app = express();
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
@@ -25,6 +28,10 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+// configure passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // set up routes
 app.use("/public", express.static("public"));
@@ -39,7 +46,7 @@ const auth = require("./routes/auth");
 app.use("/auth", auth);
 
 // base route
-app.get("/", authenticateToken, (req, res) => {
+app.get("/", (req, res) => {
   res.redirect("/search");
 });
 

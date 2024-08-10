@@ -11,6 +11,17 @@ async function getLoginByUsername(username) {
   }
 }
 
+async function getUserById(id) {
+  let SQL = `SELECT id AS id, username, password, email FROM users WHERE id = $1`;
+
+  try {
+    let results = await dal.query(SQL, [id]);
+    return results.rows[0];
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function addLogin(name, email, password, uuidv4) {
   let SQL = `INSERT INTO users (username, email, password, uuid)
     VALUES ($1, $2, $3, $4) RETURNING id;`;
@@ -26,5 +37,6 @@ async function addLogin(name, email, password, uuidv4) {
 
 module.exports = {
   getLoginByUsername,
+  getUserById,
   addLogin,
 };

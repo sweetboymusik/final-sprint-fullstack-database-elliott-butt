@@ -6,14 +6,14 @@ const router = express.Router();
 const pgDAL = require("../services/pg.search.dal");
 const mDAL = require("../services/m.search.dal");
 
-// import token authentication function
-const { authenticateToken } = require("../services/auth");
+// import required auth function
+const { ensureAuthenticated } = require("../services/passport");
 
 // import event emitter
 const { emitter } = require("../services/log.js");
 
 // root results route (/results)
-router.get("/", authenticateToken, async (req, res) => {
+router.get("/", ensureAuthenticated, async (req, res) => {
   try {
     // log GET request
     emitter.emit(
@@ -29,7 +29,7 @@ router.get("/", authenticateToken, async (req, res) => {
 });
 
 // empty postgres route (/results/postgres)
-router.get("/postgres/", authenticateToken, async (req, res) => {
+router.get("/postgres/", ensureAuthenticated, async (req, res) => {
   try {
     // log GET request
     emitter.emit(
@@ -45,7 +45,7 @@ router.get("/postgres/", authenticateToken, async (req, res) => {
 });
 
 // empty mongo route (/results/mongo)
-router.get("/mongo/", authenticateToken, async (req, res) => {
+router.get("/mongo/", ensureAuthenticated, async (req, res) => {
   try {
     // log GET request
     emitter.emit(
@@ -61,7 +61,7 @@ router.get("/mongo/", authenticateToken, async (req, res) => {
 });
 
 // empty both route (/results/both)
-router.get("/both/", authenticateToken, async (req, res) => {
+router.get("/both/", ensureAuthenticated, async (req, res) => {
   try {
     // log GET request
     emitter.emit(
@@ -77,7 +77,7 @@ router.get("/both/", authenticateToken, async (req, res) => {
 });
 
 // postgres results route (/results/postgres/:text)
-router.get("/postgres/:text", authenticateToken, async (req, res) => {
+router.get("/postgres/:text", ensureAuthenticated, async (req, res) => {
   try {
     // get books from pg and map to include db source
     let books = await pgDAL.getByText(`%${req.params.text}%`, `author ASC`);
@@ -98,7 +98,7 @@ router.get("/postgres/:text", authenticateToken, async (req, res) => {
 });
 
 // mongo results route (/results/mongo/:text)
-router.get("/mongo/:text", authenticateToken, async (req, res) => {
+router.get("/mongo/:text", ensureAuthenticated, async (req, res) => {
   try {
     // get books from mongo and map to include db source
     let books = await mDAL.getByText(`${req.params.text}`, `author ASC`);
@@ -119,7 +119,7 @@ router.get("/mongo/:text", authenticateToken, async (req, res) => {
 });
 
 // both results route (/results/both/:text)
-router.get("/both/:text", authenticateToken, async (req, res) => {
+router.get("/both/:text", ensureAuthenticated, async (req, res) => {
   try {
     // get books from pg and map to include db source
     let pgBooks = await pgDAL.getByText(`%${req.params.text}%`, `author ASC`);

@@ -2,14 +2,14 @@
 const express = require("express");
 const router = express.Router();
 
-// import token authentication function
-const { authenticateToken } = require("../services/auth");
+// import required auth function
+const { ensureAuthenticated } = require("../services/passport");
 
 // import event emitter
 const { emitter } = require("../services/log");
 
 // base search route
-router.get("/", authenticateToken, async (req, res) => {
+router.get("/", ensureAuthenticated, async (req, res) => {
   try {
     // log GET request
     emitter.emit(
@@ -25,7 +25,7 @@ router.get("/", authenticateToken, async (req, res) => {
 });
 
 // redirect to correct route based on db chosen
-router.post("/", authenticateToken, async (req, res) => {
+router.post("/", ensureAuthenticated, async (req, res) => {
   try {
     // query postgres db
     if (req.body.db === "postgres") {
