@@ -5,7 +5,6 @@ async function getLoginByUsername(username) {
 
   try {
     let results = await dal.query(SQL, [username]);
-    console.log(results.rows);
     return results.rows[0];
   } catch (error) {
     console.log(error);
