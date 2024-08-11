@@ -4,6 +4,7 @@ const router = express.Router();
 
 // import required auth function
 const { ensureAuthenticated } = require("../services/passport");
+const { addLog } = require("../services/pg.log.dal");
 
 // import event emitter
 const { emitter } = require("../services/log");
@@ -33,8 +34,8 @@ router.post("/", ensureAuthenticated, async (req, res) => {
       emitter.emit(
         "search",
         "search",
-        "SEARCH",
         "POSTGRES",
+        req.user.id,
         `Search for '${req.body.search}'`
       );
 
@@ -45,8 +46,8 @@ router.post("/", ensureAuthenticated, async (req, res) => {
       emitter.emit(
         "search",
         "search",
-        "SEARCH",
         "MONGO",
+        req.user.id,
         `Search for '${req.body.search}'`
       );
 
@@ -57,12 +58,15 @@ router.post("/", ensureAuthenticated, async (req, res) => {
       emitter.emit(
         "search",
         "search",
-        "SEARCH",
         "BOTH",
+        req.user.id,
         `Search for '${req.body.search}'`
       );
       res.redirect(`/results/both/${req.body.search}`);
     }
+
+    // insert log to pg db
+    addLog(req.user.id, req.body.search);
   } catch (error) {}
 });
 

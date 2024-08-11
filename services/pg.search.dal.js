@@ -2,7 +2,7 @@ const db = require("./pg.db");
 const fs = require("fs");
 
 // load the sql query
-const sqlQuery = fs.readFileSync("./db/sql/05-select.sql");
+const sqlQuery = fs.readFileSync("./db/sql/07-select.sql");
 
 // get all books
 const getAllBooks = function () {
