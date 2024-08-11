@@ -28,7 +28,8 @@ async function addLogin(name, email, password, uuidv4) {
 
   try {
     let results = await dal.query(SQL, [name, email, password, uuidv4]);
-    return results.rows[0].id;
+    let user = await getUserById(parseInt(results.rows[0].id));
+    return user;
   } catch (error) {
     if (error.code === "23505") return error;
     console.log(error);

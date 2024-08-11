@@ -2,16 +2,32 @@
 
 <body>
   <%- include('./partials/nav.ejs') %> <%- include('./partials/header.ejs') %>
-  <p>Welcome to Owlbear Books! Please login to continue.</p>
+
   <form action="/auth" method="post" class="login">
-    <input type="text" name="username" id="username" placeholder="Username" />
-    <input
-      type="password"
-      name="password"
-      id="password"
-      placeholder="Password"
-    />
-    <p>Don't have an account? <a href="/auth/new">Register Here</a></p>
+    <h2>Login</h2>
+    <hr />
+
+    <div class="form-div">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" placeholder="Username" />
+      <p>&ThinSpace;</p>
+    </div>
+
+    <div class="form-div">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+      />
+      <p>&ThinSpace;</p>
+    </div>
+
+    <p class="reg-message">
+      Don't have an account? <a href="/auth/new">Register Here</a>
+    </p>
+
     <button type="submit">Login</button>
   </form>
 </body>

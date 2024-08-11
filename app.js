@@ -47,7 +47,7 @@ app.use("/auth", auth);
 
 // base route
 app.get("/", (req, res) => {
-  res.redirect("/search");
+  res.render("index");
 });
 
 // start the server

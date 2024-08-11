@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 12px;
 }
 
@@ -98,15 +98,35 @@ body {
 
 input {
   font-size: 16px;
-  width: 256px;
   padding: 4px 4px;
 }
 
 .login {
-  width: 256px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 16px;
+  background-color: rgb(190, 190, 190);
+  box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.login h2 {
+  align-self: center;
+  font-size: 24px;
+}
+
+.login hr {
+  border: none;
+  height: 2px;
+  background-color: rgb(109, 109, 109);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.login p {
+  align-self: center;
 }
 
 .login button {
@@ -115,4 +135,48 @@ input {
 
 .reg-div {
   width: 256px;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.home-btn {
+  width: 148px;
+  height: 48px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.home-btn span {
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.btn-login {
+  background-color: rgb(195, 196, 201);
+}
+
+.btn-register {
+  background-color: rgb(108, 131, 200);
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-div p {
+  font-size: 8px;
+}
+
+.reg-message {
+  padding-top: 8px;
+  padding-bottom: 16px;
 }

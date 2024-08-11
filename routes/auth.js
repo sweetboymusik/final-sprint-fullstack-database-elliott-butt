@@ -4,6 +4,11 @@ const router = express.Router();
 
 // import required libraries
 const passport = require("passport");
+const bcrypt = require("bcrypt");
+const uuid = require("uuid");
+
+// import required functions
+const { addLogin } = require("../services/pg.auth.dal");
 
 // import event emitter
 const { emitter } = require("../services/log");
@@ -99,35 +104,34 @@ router.get("/new", async (req, res) => {
 });
 
 // new user registration route POST (/auth/new)
-router.post(
-  "/",
-  passport.authenticate("local", {
-    failureRedirect: "/auth",
-    failureMessage: "Invalid username or password.",
-  }),
-  (req, res) => {
-    // log auth event
-    emitter.emit(
-      "auth",
-      "auth",
-      "LOGIN",
-      "SUCCESS",
-      `user '${req.user.username}' logged in`
-    );
+router.post("/new", async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
 
-    // log POST request success
-    emitter.emit(
-      "request",
-      "request",
-      "POST",
-      res.statusCode,
-      `/auth route POST success`
-    );
+    if (username && email && password) {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const user = await addLogin(username, email, hashedPassword, uuid.v4());
 
-    req.session.status = "Happy for your return " + req.user.username;
-    res.redirect("/search");
+      // After successful registration, log the user in
+      req.session.status = "New account created, logging you in...";
+
+      req.logIn(user, (err) => {
+        if (err) {
+          return res.render("503");
+        }
+        res.redirect("/search");
+      });
+    } else {
+      req.session.status = "Not enough form fields completed.";
+      res.redirect("/auth/new");
+      return;
+    }
+  } catch (error) {
+    console.error(error);
+    res.render("503");
+    return;
   }
-);
+});
 
 // logout route (/auth/exit)
 router.get("/exit", (req, res, next) => {

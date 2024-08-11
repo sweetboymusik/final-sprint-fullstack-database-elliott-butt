@@ -1,18 +1,36 @@
 <%- include('./partials/head.ejs') %>
 
 <body>
-  <%- include('./partials/nav.ejs') %>
+  <%- include('./partials/nav.ejs') %> <%- include('./partials/header.ejs') %>
 
-  <h1>Login</h1>
-  <form action="/auth/new" method="post">
-    <input type="text" name="username" id="username" placeholder="Username" />
-    <input
-      type="password"
-      name="password"
-      id="password"
-      placeholder="Password"
-    />
-    <input type="text" name="email" id="email" placeholder="Email" />
+  <form action="/auth/new" method="post" class="login">
+    <h2>Register</h2>
+    <hr />
+
+    <div class="form-div">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" placeholder="Username" />
+      <p>&ThinSpace;</p>
+    </div>
+
+    <div class="form-div">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+      />
+      <p>&ThinSpace;</p>
+    </div>
+
+    <div class="form-div">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" placeholder="Email" />
+      <p>&ThinSpace;</p>
+    </div>
+    <br />
+
     <button type="submit">Register</button>
   </form>
 </body>
