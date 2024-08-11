@@ -32,14 +32,13 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
-  done(null, user.id); // Save the user id in the session
+  done(null, user.id);
 });
 
 passport.deserializeUser(async (id, done) => {
   try {
-    // Fetch user by id (assuming you have a function for that)
     const user = await getUserById(id);
-    done(null, user); // Attach the user object to req.user
+    done(null, user);
   } catch (err) {
     done(err, null);
   }
@@ -47,11 +46,8 @@ passport.deserializeUser(async (id, done) => {
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-    console.log("authorized as heck!");
     return next();
   }
-
-  console.log("not authorized!");
   res.redirect("/auth");
 }
 
