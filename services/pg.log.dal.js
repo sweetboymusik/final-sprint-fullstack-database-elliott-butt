@@ -1,3 +1,4 @@
+// import db
 const db = require("./pg.db");
 
 // add log
@@ -16,6 +17,7 @@ async function addLog(id, keyword) {
   }
 }
 
+// export functions
 module.exports = {
   addLog,
 };

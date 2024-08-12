@@ -32,6 +32,8 @@ function onEvent(event, type, status, message) {
 
     const fileName =
       `${format(new Date(), "yyyyMMdd")}` + `_${event}_events.log`;
+
+    // create file
     fs.appendFileSync(
       path.join(__dirname, "..", "logs", year, fileName),
       logItem + "\n"

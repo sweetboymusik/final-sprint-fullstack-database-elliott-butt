@@ -22,7 +22,9 @@ router.get("/", ensureAuthenticated, async (req, res) => {
     );
 
     res.render("search");
-  } catch (error) {}
+  } catch (error) {
+    res.render("503");
+  }
 });
 
 // redirect to correct route based on db chosen
@@ -62,12 +64,15 @@ router.post("/", ensureAuthenticated, async (req, res) => {
         req.user.id,
         `Search for '${req.body.search}'`
       );
+
       res.redirect(`/results/both/${req.body.search}`);
     }
 
     // insert log to pg db
     addLog(req.user.id, req.body.search);
-  } catch (error) {}
+  } catch (error) {
+    res.render("503");
+  }
 });
 
 module.exports = router;

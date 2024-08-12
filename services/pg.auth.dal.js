@@ -1,5 +1,6 @@
 const dal = require("./pg.db");
 
+// get user by username
 async function getLoginByUsername(username) {
   let SQL = `SELECT id AS id, username, password, email FROM users WHERE username = $1`;
 
@@ -11,6 +12,7 @@ async function getLoginByUsername(username) {
   }
 }
 
+// get user by username by ID
 async function getUserById(id) {
   let SQL = `SELECT id AS id, username, password, email FROM users WHERE id = $1`;
 
@@ -22,6 +24,7 @@ async function getUserById(id) {
   }
 }
 
+// add a login/user to database
 async function addLogin(name, email, password, uuidv4) {
   let SQL = `INSERT INTO users (username, email, password, uuid)
     VALUES ($1, $2, $3, $4) RETURNING id;`;
@@ -36,6 +39,7 @@ async function addLogin(name, email, password, uuidv4) {
   }
 }
 
+// export functions
 module.exports = {
   getLoginByUsername,
   getUserById,

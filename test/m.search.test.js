@@ -1,5 +1,5 @@
 const dal = require("../services/m.db");
-const { getByText } = require("../services/m.search.dal"); // Adjust the path
+const { getByText } = require("../services/m.search.dal");
 
 jest.mock("../services/m.db");
 

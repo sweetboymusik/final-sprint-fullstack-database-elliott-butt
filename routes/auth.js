@@ -24,13 +24,17 @@ router.get("/", async (req, res) => {
     `/auth route (login.ejs) accessed`
   );
 
+  // save session status and set to null
   let status = req.session.status;
   req.session.status = null;
+
+  // render page
   res.render("login", { status });
 });
 
 // root auth route POST (/auth)
 router.post("/", (req, res, next) => {
+  // authenticate with passport
   passport.authenticate("local", (err, user, info) => {
     if (err) {
       return next(err);
@@ -46,6 +50,7 @@ router.post("/", (req, res, next) => {
         `user '${req.body.username}' not found`
       );
 
+      // set session status
       req.session.status = info.message || "Username or password is incorrect.";
 
       // log POST request failure
@@ -57,6 +62,7 @@ router.post("/", (req, res, next) => {
         `/auth route POST failure (${req.session.status})`
       );
 
+      // redirect to login page
       return res.redirect("/auth");
     }
 
@@ -83,7 +89,7 @@ router.post("/", (req, res, next) => {
         `/auth route POST success`
       );
 
-      req.session.status = "Happy for your return " + user.username;
+      // redirect to search page
       return res.redirect("/search");
     });
   })(req, res, next);
@@ -100,6 +106,7 @@ router.get("/new", async (req, res) => {
     `/auth/new route (register.ejs) accessed`
   );
 
+  // render register page
   res.render("register", { status: req.session.status });
   return;
 });
@@ -109,26 +116,31 @@ router.post("/new", async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
+    // make sure all fields are filled
     if (username && email && password) {
+      // add new user to db
       const hashedPassword = await bcrypt.hash(password, 10);
       const user = await addLogin(username, email, hashedPassword, uuid.v4());
 
-      // After successful registration, log the user in
+      // after successful registration, log the user in
       req.session.status = "New account created, logging you in...";
 
       req.logIn(user, (err) => {
         if (err) {
+          // render to 503 page
           return res.render("503");
         }
+        // redirect to search page
         res.redirect("/search");
       });
     } else {
+      // redirect to registration page
       req.session.status = "Not enough form fields completed.";
       res.redirect("/auth/new");
       return;
     }
   } catch (error) {
-    console.error(error);
+    // render to 503 page
     res.render("503");
     return;
   }
@@ -136,7 +148,7 @@ router.post("/new", async (req, res) => {
 
 // logout route (/auth/exit)
 router.get("/exit", (req, res, next) => {
-  // Get the username before session is destroyed
+  // get the username before session is destroyed
   const user = req.user ? req.user.username : "Unknown User";
 
   req.logout((err) => {
@@ -150,7 +162,7 @@ router.get("/exit", (req, res, next) => {
         `could not logout user '${user}'`
       );
 
-      return next(err); // Use next() to handle errors if needed
+      return next(err);
     }
 
     // log auth event
@@ -173,6 +185,8 @@ router.get("/exit", (req, res, next) => {
 
     // Clear the session cookie
     res.clearCookie("connect.sid");
+
+    // redirect to logout page
     res.redirect("/auth/logout");
   });
 });
@@ -188,6 +202,7 @@ router.get("/logout", async (req, res) => {
     `/auth route (logout.ejs) accessed`
   );
 
+  // render logout page
   res.render("logout");
   return;
 });

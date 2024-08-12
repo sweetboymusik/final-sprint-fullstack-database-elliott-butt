@@ -25,7 +25,9 @@ router.get("/", ensureAuthenticated, async (req, res) => {
     );
 
     res.render("results");
-  } catch (error) {}
+  } catch (error) {
+    res.render("503");
+  }
 });
 
 // empty postgres route (/results/postgres)
@@ -40,8 +42,11 @@ router.get("/postgres/", ensureAuthenticated, async (req, res) => {
       `/results/postgres route (results.ejs) accessed`
     );
 
+    // render results page
     res.render("results", { books: [] });
-  } catch (error) {}
+  } catch (error) {
+    res.render("503");
+  }
 });
 
 // empty mongo route (/results/mongo)
@@ -56,8 +61,11 @@ router.get("/mongo/", ensureAuthenticated, async (req, res) => {
       `/results/mongo route (results.ejs) accessed`
     );
 
+    // render results page
     res.render("results", { books: [] });
-  } catch (error) {}
+  } catch (error) {
+    res.render("503");
+  }
 });
 
 // empty both route (/results/both)
@@ -72,8 +80,11 @@ router.get("/both/", ensureAuthenticated, async (req, res) => {
       `/results/both route (results.ejs) accessed`
     );
 
+    // render results page
     res.render("results", { books: [] });
-  } catch (error) {}
+  } catch (error) {
+    res.render("503");
+  }
 });
 
 // postgres results route (/results/postgres/:text)
@@ -92,9 +103,11 @@ router.get("/postgres/:text", ensureAuthenticated, async (req, res) => {
       `/results/postgres/${req.params.text} route (results.ejs) accessed`
     );
 
-    // render results
+    // render results page
     res.render("results", { books: booksMapped });
-  } catch (error) {}
+  } catch (error) {
+    res.render("503");
+  }
 });
 
 // mongo results route (/results/mongo/:text)
@@ -113,9 +126,11 @@ router.get("/mongo/:text", ensureAuthenticated, async (req, res) => {
       `/results/mongo/${req.params.text} route (results.ejs) accessed`
     );
 
-    // render results
+    // render results page
     res.render("results", { books: booksMapped });
-  } catch (error) {}
+  } catch (error) {
+    res.render("503");
+  }
 });
 
 // both results route (/results/both/:text)
@@ -144,9 +159,11 @@ router.get("/both/:text", ensureAuthenticated, async (req, res) => {
       `/results/both/${req.params.text} route (results.ejs) accessed`
     );
 
-    // render results
+    // render results page
     res.render("results", { books: combined });
-  } catch (error) {}
+  } catch (error) {
+    res.render("503");
+  }
 });
 
 module.exports = router;

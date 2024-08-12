@@ -1,5 +1,5 @@
 const db = require("../services/pg.db");
-const { getAllBooks, getByText } = require("../services/pg.search.dal"); // Adjust the path to your module
+const { getAllBooks, getByText } = require("../services/pg.search.dal");
 
 jest.mock("../services/pg.db", () => ({
   query: jest.fn(),

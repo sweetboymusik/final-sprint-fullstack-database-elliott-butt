@@ -1,3 +1,4 @@
+// import db and fs
 const db = require("./pg.db");
 const fs = require("fs");
 
@@ -35,6 +36,7 @@ const getByText = function (text, sort) {
   });
 };
 
+// export functions
 module.exports = {
   getAllBooks,
   getByText,
