@@ -1,0 +1,16 @@
+Final Sprint for Full-Stack and Database
+Elliott BUtt
+
+1. Quite a while, as it was a solo effort. Hard to tell the number of hours,
+   but I worked on it for at least 1 whole week of the 2 given (the other being
+   for the other project)
+2. ChatGPT, google, stackoverflow, postgres docs, mongo docs, npm docs (mainly for passport)
+3. No additional help from teachers.
+3. No additional help from friends.
+5. I would say it was a good difficulty. Made me work hard, but never felt too overwhelming.
+   Learned a lot!
+
+NOTES:
+
+I left the .env out of the .gitignore so that the project would work properly if downloaded to
+your system. I realize this is bad practice, as .env files should be protected!
