@@ -1,5 +1,26 @@
 <nav>
-  <a href="/">Home</a>
-  <a href="/search">Search</a>
-  <a href="/auth/exit">Logout</a>
+  <a href="/">
+    <span>Home</span>
+  </a>
+
+  <a href="/search">
+    <span>Search</span>
+  </a>
+
+  <a href="/auth/new">
+    <span>Register</span>
+  </a>
+
+  <% if (user) { %>
+  <!-- If the user is logged in -->
+  <a href="/auth/exit">
+    <span>Logout</span>
+  </a>
+  <% } else { %>
+  <!-- If the user is not logged in -->
+
+  <a href="/auth">
+    <span>Login</span>
+  </a>
+  <% } %>
 </nav>

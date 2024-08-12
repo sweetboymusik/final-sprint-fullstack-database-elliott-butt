@@ -1,0 +1,19 @@
+<%- include('./partials/head.ejs') %>
+
+<body>
+  <%- include('./partials/nav.ejs') %> <%- include('./partials/header.ejs') %>
+  <p>
+    Welcome to Owlbear Books! Please login or register to access the search
+    feature.
+  </p>
+
+  <div class="home-buttons">
+    <a href="/auth" class="home-btn btn-login">
+      <span>Login</span>
+    </a>
+
+    <a href="/auth/new" class="home-btn btn-register">
+      <span>Register</span>
+    </a>
+  </div>
+</body>

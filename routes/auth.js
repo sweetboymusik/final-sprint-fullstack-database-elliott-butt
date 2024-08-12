@@ -24,8 +24,9 @@ router.get("/", async (req, res) => {
     `/auth route (login.ejs) accessed`
   );
 
-  res.render("login");
-  return;
+  let status = req.session.status;
+  req.session.status = null;
+  res.render("login", { status });
 });
 
 // root auth route POST (/auth)
@@ -172,8 +173,23 @@ router.get("/exit", (req, res, next) => {
 
     // Clear the session cookie
     res.clearCookie("connect.sid");
-    res.redirect("/auth");
+    res.redirect("/auth/logout");
   });
+});
+
+// root auth route (/auth)
+router.get("/logout", async (req, res) => {
+  // log GET request
+  emitter.emit(
+    "request",
+    "request",
+    "GET",
+    res.statusCode,
+    `/auth route (logout.ejs) accessed`
+  );
+
+  res.render("logout");
+  return;
 });
 
 module.exports = router;

@@ -2,7 +2,13 @@
 
 <body>
   <%- include('./partials/nav.ejs') %> <%- include('./partials/header.ejs') %>
+  <% if (user) { %>
+  <p>
+    You are already logged in! Please <a href="/auth/exit">logout</a> to
+    register a new user.
+  </p>
 
+  <% } else { %>
   <form action="/auth/new" method="post" class="login">
     <h2>Register</h2>
     <hr />
@@ -10,7 +16,11 @@
     <div class="form-div">
       <label for="username">Username</label>
       <input type="text" name="username" id="username" placeholder="Username" />
-      <p>&ThinSpace;</p>
+      <% if (status && status.includes("username")) { %>
+      <span class="error-message"><%= status %></span>
+      <% } else {%>
+      <span class="error-message">&ThinSpace;</span>
+      <% } %>
     </div>
 
     <div class="form-div">
@@ -21,16 +31,27 @@
         id="password"
         placeholder="Password"
       />
-      <p>&ThinSpace;</p>
+
+      <% if (status && status.includes("password")) { %>
+      <span class="error-message"><%= status %></span>
+      <% } else {%>
+      <span class="error-message">&ThinSpace;</span>
+      <% } %>
     </div>
 
     <div class="form-div">
       <label for="email">Email</label>
       <input type="text" name="email" id="email" placeholder="Email" />
-      <p>&ThinSpace;</p>
+      <% if (status && status.includes("field")) { %>
+      <span class="error-message"><%= status %></span>
+      <% } else {%>
+      <span class="error-message">&ThinSpace;</span>
+      <% } %>
     </div>
     <br />
 
     <button type="submit">Register</button>
   </form>
+
+  <% } %>
 </body>

@@ -33,6 +33,12 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// make user variable available in all views
+app.use((req, res, next) => {
+  res.locals.user = req.user;
+  next();
+});
+
 // set up routes
 app.use("/public", express.static("public"));
 

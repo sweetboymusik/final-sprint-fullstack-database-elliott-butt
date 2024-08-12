@@ -10,7 +10,11 @@
     <div class="form-div">
       <label for="username">Username</label>
       <input type="text" name="username" id="username" placeholder="Username" />
-      <p>&ThinSpace;</p>
+      <% if (status && status.includes("username")) { %>
+      <spane class="error-message"><%= status %></span>
+      <% } else {%>
+      <span class="error-message">&ThinSpace;</span>
+      <% } %>
     </div>
 
     <div class="form-div">
@@ -21,7 +25,11 @@
         id="password"
         placeholder="Password"
       />
-      <p>&ThinSpace;</p>
+      <% if (status && status.includes("password")) { %>
+      <span class="error-message"><%= status %></span>
+      <% } else {%>
+      <span class="error-message">&ThinSpace;</span>
+      <% } %>
     </div>
 
     <p class="reg-message">

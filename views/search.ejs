@@ -2,15 +2,5 @@
 
 <body>
   <%- include('./partials/nav.ejs') %> <%- include('./partials/header.ejs') %>
-
-  <form action="/search" method="post">
-    <label for="serach">Search</label>
-    <input type="text" name="search" id="serach" />
-    <select name="db" id="db">
-      <option value="postgres">PostgreSQL</option>
-      <option value="mongo">Mongo DB</option>
-      <option value="both">Both</option>
-    </select>
-    <button type="submit">Search</button>
-  </form>
+  <%- include('./partials/searchbox.ejs') %>
 </body>

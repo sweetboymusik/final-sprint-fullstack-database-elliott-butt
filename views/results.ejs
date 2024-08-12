@@ -1,9 +1,11 @@
 <%- include('./partials/head.ejs') %>
 
 <body>
-  <%- include('./partials/nav.ejs') %>
+  <%- include('./partials/nav.ejs') %> <%- include('./partials/header.ejs') %>
+  <%- include('./partials/searchbox.ejs') %>
 
-  <h1>Results</h1>
+  <h2 class="results-head">Results</h2>
+
   <div class="results-grid">
     <% if (books.length > 0) { %> <% books.forEach(book => { %>
     <div class="book-card <%= book.source %>">
@@ -23,11 +25,12 @@
       <div class="book-content">
         <h3 class="book-title"><%= book.title %></h3>
         <span class="author"><%= book.author %></span>
+        <br />
         <div class="book-info">
-          <span class="date"
-            ><%= new Date(book.publication_date).getFullYear() %></span
+          <span class="date">
+            <%= book.publisher %> (<%= new
+            Date(book.publication_date).getFullYear() %>)</span
           >
-          <span>Published by <%= book.publisher %></span>
         </div>
       </div>
     </div>
