@@ -1,25 +1,28 @@
 <nav>
-  <a href="/">
+  <a href="/" class="<%= (url === '/' || url === '') ? 'active' : '' %>">
     <span>Home</span>
   </a>
 
-  <a href="/search">
+  <a
+    href="/search"
+    class="<%= url.startsWith('/search') || url.startsWith('/results') ? 'active' : '' %>"
+  >
     <span>Search</span>
   </a>
 
-  <a href="/auth/new">
+  <a href="/auth/new" class="<%= url === '/auth/new' ? 'active' : '' %>">
     <span>Register</span>
   </a>
 
   <% if (user) { %>
-  <!-- If the user is logged in -->
-  <a href="/auth/exit">
+  <a href="/auth/exit" class="<%= url === '/auth/exit' ? 'active' : '' %>">
     <span>Logout</span>
   </a>
   <% } else { %>
-  <!-- If the user is not logged in -->
-
-  <a href="/auth">
+  <a
+    href="/auth"
+    class="<%= url.startsWith('/auth') && url !== '/auth/new' && url !== '/auth/exit' ? 'active' : '' %>"
+  >
     <span>Login</span>
   </a>
   <% } %>

@@ -32,9 +32,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// make user variable available in all views
+// make user variable and url available in all views
 app.use((req, res, next) => {
   res.locals.user = req.user;
+  res.locals.url = req.url;
   next();
 });
 

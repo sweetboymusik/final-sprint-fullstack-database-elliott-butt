@@ -2,5 +2,7 @@
 
 <body>
   <%- include('./partials/nav.ejs') %> <%- include('./partials/header.ejs') %>
-  <%- include('./partials/searchbox.ejs') %>
+  <%- include('./partials/searchbox.ejs') %> <% if (errorMessage) { %>
+  <p style="color: red"><%= errorMessage %></p>
+  <% } %>
 </body>

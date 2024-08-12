@@ -12,6 +12,9 @@ const { emitter } = require("../services/log");
 // base search route
 router.get("/", ensureAuthenticated, async (req, res) => {
   try {
+    // get error message if any
+    const errorMessage = req.query.error;
+
     // log GET request
     emitter.emit(
       "request",
@@ -21,7 +24,7 @@ router.get("/", ensureAuthenticated, async (req, res) => {
       `/search route (login.ejs) accessed`
     );
 
-    res.render("search");
+    res.render("search", { errorMessage });
   } catch (error) {
     res.render("503");
   }
@@ -30,6 +33,18 @@ router.get("/", ensureAuthenticated, async (req, res) => {
 // redirect to correct route based on db chosen
 router.post("/", ensureAuthenticated, async (req, res) => {
   try {
+    // validate user input with regex
+    // (injection attack prevention method)
+    const input = req.body.search;
+    const regex = /^[A-Za-z0-9]+$/;
+
+    if (!input.match(regex)) {
+      res.redirect(
+        "/search?error=Invalid input, please use only letters and numbers."
+      );
+      return;
+    }
+
     // query postgres db
     if (req.body.db === "postgres") {
       // log search
@@ -38,10 +53,10 @@ router.post("/", ensureAuthenticated, async (req, res) => {
         "search",
         "POSTGRES",
         req.user.id,
-        `Search for '${req.body.search}'`
+        `Search for '${input}'`
       );
 
-      res.redirect(`./results/postgres/${req.body.search}`);
+      res.redirect(`./results/postgres/${input}`);
       // query mongo db
     } else if (req.body.db === "mongo") {
       // log search
@@ -50,10 +65,10 @@ router.post("/", ensureAuthenticated, async (req, res) => {
         "search",
         "MONGO",
         req.user.id,
-        `Search for '${req.body.search}'`
+        `Search for '${input}'`
       );
 
-      res.redirect(`/results/mongo/${req.body.search}`);
+      res.redirect(`/results/mongo/${input}`);
       // query both dbs
     } else {
       // log search
@@ -62,14 +77,14 @@ router.post("/", ensureAuthenticated, async (req, res) => {
         "search",
         "BOTH",
         req.user.id,
-        `Search for '${req.body.search}'`
+        `Search for '${input}'`
       );
 
-      res.redirect(`/results/both/${req.body.search}`);
+      res.redirect(`/results/both/${input}`);
     }
 
     // insert log to pg db
-    addLog(req.user.id, req.body.search);
+    addLog(req.user.id, input);
   } catch (error) {
     res.render("503");
   }

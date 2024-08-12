@@ -211,7 +211,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: var(--postgres-color);
+  background-color: rgb(108, 131, 200);
   color: white;
 }
 
@@ -251,4 +251,9 @@ select {
   color: rgb(112, 20, 20);
   align-self: flex-start;
   font-size: 10px;
+}
+
+.active {
+  background-color: rgb(108, 131, 200);
+  color: white;
 }

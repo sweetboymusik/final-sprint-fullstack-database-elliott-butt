@@ -2,6 +2,13 @@
 
 <body>
   <%- include('./partials/nav.ejs') %> <%- include('./partials/header.ejs') %>
+  <% if (user) { %>
+  <p>
+    You are already logged in! Please <a href="/auth/exit">logout</a> to login
+    as a different user.
+  </p>
+
+  <% } else { %>
 
   <form action="/auth" method="post" class="login">
     <h2>Login</h2>
@@ -11,7 +18,7 @@
       <label for="username">Username</label>
       <input type="text" name="username" id="username" placeholder="Username" />
       <% if (status && status.includes("username")) { %>
-      <spane class="error-message"><%= status %></span>
+      <span class="error-message"><%= status %></span>
       <% } else {%>
       <span class="error-message">&ThinSpace;</span>
       <% } %>
@@ -38,4 +45,6 @@
 
     <button type="submit">Login</button>
   </form>
+
+  <% } %>
 </body>
